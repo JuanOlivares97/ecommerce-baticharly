@@ -1,3 +1,4 @@
+import Image from "next/image";
 export const Footer = () => {
     return (
         <footer className="bg-black text-yellow-400 py-6">
@@ -5,7 +6,12 @@ export const Footer = () => {
                 <div className="md:flex md:justify-between md:px-64 py-4">
                     <div className="flex flex-col items-center text center">
                         <h1 className="font-bold text-lg mb-4">Contáctenos por nuestras redes sociales</h1>
-                        <img src="/img/BotiCharly-logotipos.svg" alt="Logo de SuperCharly" className="h-32 w-auto" />
+
+                        <Image src="/img/BotiCharly-logotipos.svg"
+                            width={128}
+                            height={128}
+                            alt="Logo de SuperCharly" />
+
                         <div className="flex items-center mb-4">
                             <a href="#" target="_blank" className="mr-2">
 
@@ -42,6 +48,6 @@ export const Footer = () => {
                 <div className="mx-auto text-center">Copyright © Boti Charly. Todos los derechos Reservados.</div>
             </div>
         </footer>
-            
+
     );
 };

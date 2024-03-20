@@ -6,9 +6,9 @@ export default function Home() {
   return (
     <div>
       <div>
-        <FullImage src="/img/BannerBotilleria.jpg" alt="Banner" />
+        <FullImage src="/img/BannerBotilleria.jpg" alt="Banner"/>
       </div>
-      <div className="mx-64">
+      <div>
         <CardProduct /> 
       </div>
     </div>  

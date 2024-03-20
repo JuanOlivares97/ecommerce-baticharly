@@ -1,8 +1,12 @@
+import Image from "next/image";
 const CardProduct = ({imgRef,NombreProducto,PrecioProducto}) => {
     return (
         <div className="bg-white rounded-lg shadow-md overflow-hidden m-6 w-48 h-full">
             {/* Imagen del producto */}
-            <img src={imgRef} alt="Product" className="w-48 h-48 object-cover" />
+            <Image src={imgRef} alt="Product" 
+            width={192}
+            height={192}
+            className="w-48 h-48 object-cover" />
 
             {/* Contenido de la tarjeta */}
             <div className="p-4">

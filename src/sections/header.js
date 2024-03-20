@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CustomButton } from "@/components/button";
 
 export const Header = () => {
@@ -16,7 +17,7 @@ export const Header = () => {
                 </div>
             </div>
             <div className="bg-black text-yellow-400 md:flex md:justify-between md:flex-row md:px-64 flex-col items-center relative">
-                <img src="/img/BotiCharly-logotipos.svg" alt="Logo de SuperCharly" className="h-44 w-auto" />
+                <Image src="/img/BotiCharly-logotipos.svg" alt="Logo de SuperCharly" width={176} height={176}/>
                 <input type="text" placeholder="Buscar productos..." className="bg-transparent border-b border-yellow-400 text-yellow-400 placeholder-yellow-400 focus:outline-none focus:border-yellow-300 px-3 py-2 mb-4" />
                 <button id="cart" className="bg-yellow-400 text-black px-4 py-2 rounded-lg ml-2 hover:bg-black hover:text-yellow-400 transition duration-300 relative">
                     Carrito
@@ -24,7 +25,7 @@ export const Header = () => {
                 </button>
             </div>
             <nav className="bg-black text-yellow-400 md:px-64 py-4">
-                <ul className="flex justify-around">
+                <ul className="md:flex md:justify-around text-center">
                     <li>
                         <a href="#" className="hover:text-white">Ofertas</a>
                     </li>
