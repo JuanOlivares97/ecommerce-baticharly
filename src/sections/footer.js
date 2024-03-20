@@ -3,7 +3,7 @@ export const Footer = () => {
     return (
         <footer className="bg-black text-yellow-400 py-6">
             <div className="">
-                <div className="md:flex md:justify-between md:px-64 py-4">
+                <div className="md:flex md:justify-between 2xl:px-64 py-4">
                     <div className="flex flex-col items-center text center">
                         <h1 className="font-bold text-lg mb-4">Contáctenos por nuestras redes sociales</h1>
 
