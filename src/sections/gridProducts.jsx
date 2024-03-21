@@ -13,7 +13,7 @@ const GridProduct = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:px-64 my-2 gap-6">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  2xl:px-64 my-2 gap-6">
       {products.map(product => (
         <CardProduct
         key={product.id}

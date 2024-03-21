@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { CustomButton } from "@/components/button";
 
 export const Header = () => {
@@ -6,8 +7,8 @@ export const Header = () => {
         <header>
             <div id="up-bar" className="bg-black text-yellow-400 text-center md:flex md:justify-between 2xl:px-64 py-3">
                 <div id="socials">
-                    <a href="https://www.instagram.com/tunombre" className="mr-4">Instagram</a>
-                    <a href="https://www.facebook.com/tunombre">Facebook</a>
+                    <Link href="https://www.instagram.com/tunombre" className="mr-4">Instagram</Link>
+                    <Link href="https://www.facebook.com/tunombre">Facebook</Link>
                 </div>
                 <div id="info">
                     Horario: Lunes a Sábado de 11:00 a 22:00 hrs.
@@ -27,25 +28,25 @@ export const Header = () => {
             <nav className="bg-black text-yellow-400 2xl:px-64 py-4">
                 <ul className="md:flex md:justify-around text-center">
                     <li>
-                        <a href="#" className="hover:text-white">Ofertas</a>
+                        <Link href="#" className="hover:text-white">Ofertas</Link>
                     </li>
                     <li>
-                        <a href="#" className="hover:text-white">Mayorista</a>
+                        <Link href="#" className="hover:text-white">Mayorista</Link>
                     </li>
                     <li>
-                        <a href="#" className="hover:text-white">Cervezas</a>
+                        <Link href="#" className="hover:text-white">Cervezas</Link>
                     </li>
                     <li>
-                        <a href="#" className="hover:text-white">Destilados</a>
+                        <Link href="#" className="hover:text-white">Destilados</Link>
                     </li>
                     <li>
-                        <a href="#" className="hover:text-white">Vino y Espumantes</a>
+                        <Link href="#" className="hover:text-white">Vino y Espumantes</Link>
                     </li>
                     <li>
-                        <a href="#" className="hover:text-white">Bebidas</a>
+                        <Link href="#" className="hover:text-white">Bebidas</Link>
                     </li>
                     <li>
-                        <a href="#" className="hover:text-white">Licores</a>
+                        <Link href="#" className="hover:text-white">Licores</Link>
                     </li>
                 </ul>
             </nav>
