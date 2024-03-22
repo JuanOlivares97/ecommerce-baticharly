@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const CardProduct = ({imgRef,NombreProducto,PrecioProducto}) => {
     return (
-        <div className="bg-slate-950 text-white rounded-lg shadow-md overflow-hidden w-48 h-96 flex flex-col">
+        <div className="bg-black text-white rounded-lg shadow-md overflow-hidden w-48 h-96 flex flex-col">
           {/* Imagen del producto */}
           <Image src={imgRef} alt="Product" width={192} height={192} className="w-48 h-48 object-cover" />
       

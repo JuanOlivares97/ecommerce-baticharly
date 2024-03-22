@@ -1,4 +1,4 @@
-import "./globals.css";
+import "../globals.css";
 import { Header } from '@/sections/header';
 import { Footer } from '@/sections/footer';
 
@@ -16,6 +16,8 @@ export default function RootLayout({ children }) {
         {children}
         
         <Footer />
+
+        <box-icon name="rocket"></box-icon>
       </body>
     </html>
   );
