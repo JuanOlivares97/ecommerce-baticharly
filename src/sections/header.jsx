@@ -16,7 +16,7 @@ export const Header = () => {
                     Horario: Lunes a Sábado de 11:00 a 22:00 hrs.
                 </div>
                 <div id="client">
-                    <CustomButton text="Ingresa" href="#" />
+                    <CustomButton text="Ingresa" href="/auth/login" />
                 </div>
             </div>
 
