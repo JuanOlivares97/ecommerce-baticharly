@@ -23,7 +23,7 @@ export const Footer = () => {
 
                             </a>
                         </div>
-                        <p>Teléfono (Sólo WhatsApp): +56 9 3769 7413</p>
+                        <p>WhatsApp: +56 9 3769 7413</p>
                         <p>Correo: pedidos@boticharly.cl</p>
                     </div>
                     <div>
