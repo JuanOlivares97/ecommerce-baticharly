@@ -7,14 +7,6 @@
       "description": "Tienda Online BotiCharly - https://www.boticharly.cl",
       "type": "website",
       "url": "https://www.boticharly.cl",
-      "site_name": "Botilleria Charly",
-      "images": [
-        {
-          "url": "/card.png",
-          "width": "800",
-          "height": "600",
-          "alt": "Next.js Commerce"
-        }
-      ]
+      "site_name": "Botilleria Charly"
     }
   }

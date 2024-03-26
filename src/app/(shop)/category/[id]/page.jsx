@@ -1,9 +1,64 @@
-export default function Page({params}) {
+'use client'
+import { useRouter } from 'next/router';
+import { useState } from 'react';
+import GridProducts from '@/sections/gridProducts';
+import GridProductsCol from '@/sections/gridProductsCol';
+import { FaList, FaGrip } from "react-icons/fa6";
+
+export default function CategoryView() {
+    const router = useRouter();
+    const { category } = router.query;
+    const [orderBy, setOrderBy] = useState(''); 
+    const [gridView, setGridView] = useState(true);
+
+    // Función para cambiar la opción de ordenado
+    const handleOrderByChange = (e) => {
+        setOrderBy(e.target.value);
+    };
+
+    // Función para alternar entre la vista de cuadrícula y lista
+    const toggleGridView = () => {
+        setGridView(!gridView);
+    };
 
     return (
-        <div className="text-white">
-            <h1>Categoria: {params.id}</h1>
-            {/* Resto del contenido de la página */}
+        <div className="flex text-white md:px-64 my-9">
+            {/* Filtro */}
+            <div className="w-1/4">
+                {/* Aquí puedes colocar tu componente de filtro */}
+                <h2>Filtro</h2>
+            </div>
+
+            {/* Grid */}
+            <div className="w-3/4">
+                {/* Selector de vista (Grid o Lista) y Ordenado */}
+                <div className="flex justify-between mb-4">
+                    {/* Selector de vista */}
+                    <div>
+                        <button onClick={toggleGridView} className="mr-2">
+                            {gridView ? <FaList className=' w-6 h-6'/> : <FaGrip className=' w-6 h-6' />}
+                        </button>
+                    </div>
+
+                    {/* Selector de ordenado */}
+                    <div>
+                        <select className='bg-black' value={orderBy} onChange={handleOrderByChange}>
+                            <option value="">Ordenar por</option>
+                            <option value="name">Nombre</option>
+                            <option value="price">Precio</option>
+                            {/* Agrega más opciones de ordenado según tus necesidades */}
+                        </select>
+                    </div>
+                </div>
+
+                {/* Contenido principal (productos) */}
+                <div>
+                    <h2 className="text-3xl font-semibold text-center mb-10 text-white">
+                        {category ? `Nuestros Productos - ${category}` : 'Nuestros Productos'}
+                    </h2>
+                    {gridView ? <GridProducts /> : <GridProductsCol />}
+                </div>
+            </div>
         </div>
     );
 }

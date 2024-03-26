@@ -1,8 +1,8 @@
 'use client'
 import React, { useEffect, useState } from 'react';
-import CardProduct from '@/components/cardProduct';
+import CardProductCol from '@/components/cardProductCol';
 
-const GridProduct = () => {
+const GridProductCol = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
@@ -27,23 +27,35 @@ const GridProduct = () => {
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   return (
-    <div className="container py-6">
-      
+    <div className="container mx-auto px-4 py-6">
       {loading ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 gap-6">
           {Array.from({ length: productsPerPage }, (_, i) => (
-            <div key={i} className="animate-pulse">
-              <div className="rounded-lg bg-gray-200 h-64"></div>
-              <div className="mt-4 h-4 bg-gray-200 rounded"></div>
-              <div className="mt-2 h-4 bg-gray-200 rounded"></div>
+            <div key={i} className="bg-white text-white rounded-lg shadow-md overflow-hidden flex flex-row">
+              {/* Imagen del producto */}
+              <div className="animate-pulse bg-gray-200 rounded-lg h-48 w-48"></div>
+              
+              {/* Contenido de la tarjeta */}
+              <div className="p-2 flex flex-col justify-between flex-grow">
+                {/* Nombre del producto */}
+                <div className="animate-pulse bg-gray-200 h-4 w-32 rounded mb-2"></div>
+                
+                {/* Precio del producto */}
+                <div className="flex items-center justify-center">
+                  <div className="animate-pulse bg-gray-200 h-8 w-16 rounded"></div>
+                </div>
+                
+                {/* Botón de agregar al carrito (opcional) */}
+                <button className="animate-pulse px-3 py-1 bg-gray-200 text-white font-bold rounded hover:bg-gray-300 focus:outline-none self-center">Loading</button>
+              </div>
             </div>
           ))}
         </div>
       ) : (
         <>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4  gap-6 justify-items-center">
+          <div className="grid grid-cols-1 gap-6">
             {currentProducts.map(product => (
-              <CardProduct
+              <CardProductCol
                 key={product.id}
                 NombreProducto={product.title}
                 PrecioProducto={product.price}
@@ -71,4 +83,4 @@ const GridProduct = () => {
   );
 };
 
-export default GridProduct;
+export default GridProductCol;

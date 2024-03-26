@@ -14,7 +14,7 @@ export default function Home() {
 
       </div>
 
-      <div className="flex justify-center ">
+      <div className="flex justify-center">
         <GridProduct />
       </div>
     </div>

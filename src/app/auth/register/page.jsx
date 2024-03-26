@@ -15,7 +15,7 @@ const RegisterPage = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         if (!showPasswordForm) {
             if (
@@ -31,6 +31,19 @@ const RegisterPage = () => {
                 setShowPasswordForm(true);
             } else {
                 alert('Por favor, complete todos los campos correctamente.');
+            }
+        } else {
+            if (password === confirmPassword) {
+                // Handle registration logic here
+                console.log('Name:', name);
+                console.log('First Name:', firstName);
+                console.log('Last Name:', lastName);
+                console.log('RUT:', rut);
+                console.log('Phone:', phone);
+                console.log('Email:', email);
+                console.log('Password:', password);
+            } else {
+                alert('Las contraseñas no coinciden.');
             }
         }
     };
@@ -64,7 +77,88 @@ const RegisterPage = () => {
                                     required
                                 />
                             </div>
-                            {/* Otros campos de registro */}
+                            <div className="mb-4">
+                                <label htmlFor="firstName" className="block font-bold mb-2">
+                                    Primer apellido
+                                </label>
+                                <input
+                                    type="text"
+                                    id="firstName"
+                                    value={firstName}
+                                    onChange={(e) => setFirstName(e.target.value)}
+                                    className={classInputs}
+                                    required
+                                />
+                            </div>
+                            <div className="mb-4">
+                                <label htmlFor="lastName" className="block font-bold mb-2">
+                                    Segundo apellido
+                                </label>
+                                <input
+                                    type="text"
+                                    id="lastName"
+                                    value={lastName}
+                                    onChange={(e) => setLastName(e.target.value)}
+                                    className={classInputs}
+                                    required
+                                />
+                            </div>
+                            <div className="mb-4">
+                                <label htmlFor="rut" className="block font-bold mb-2">
+                                    RUT
+                                </label>
+                                <input
+                                    type="text"
+                                    id="rut"
+                                    value={rut}
+                                    onChange={(e) => setRut(e.target.value)}
+                                    className={classInputs}
+                                    required
+                                />
+                                <span>Ej: 12345678-9</span>
+                            </div>
+                            <div className="mb-4">
+                                <label htmlFor="phone" className="block font-bold mb-2">
+                                    Teléfono
+                                </label>
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    value={phone}
+                                    onChange={(e) => setPhone(e.target.value)}
+                                    className={classInputs}
+                                    required
+                                />
+                                <span>Ej: 9 1234 9876</span>
+                            </div>
+                            <div className="mb-4">
+                                <label htmlFor="email" className="block font-bold mb-2">
+                                    Correo electrónico
+                                </label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    className={classInputs}
+                                    required
+                                />
+                                <span>Ej: micorreo@gmail.com</span>
+                            </div>
+                            <div className="mb-4">
+                                <label htmlFor="confirmEmail" className="block font-bold mb-2">
+                                    Confirmar correo electrónico
+                                </label>
+                                <input
+                                    type="email"
+                                    id="confirmEmail"
+                                    value={confirmEmail}
+                                    onChange={(e) => setConfirmEmail(e.target.value)}
+                                    className={classInputs}
+                                    required
+                                />
+                                <span>Ej: micorreo@gmail.com</span>
+                            </div>
                             <div className="mb-6">
                                 <div className="flex items-center">
                                     <input
@@ -122,5 +216,6 @@ const RegisterPage = () => {
     );
 };
 
+
 const classInputs = "w-full px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 text-black"
-export default RegisterPage;
+export default RegisterPage; 

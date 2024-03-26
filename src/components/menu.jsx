@@ -3,25 +3,22 @@ export const Menu = ({}) => {
     return (
         <ul className="grid grid-cols-3 md:flex md:justify-around text-center h-12">
             <li className={className}>
-                <Link href="#" className={classNameLink}>Ofertas<i className='bx bx-user'></i></Link>
+                <Link href="/category/ofertas" className={classNameLink}>Ofertas<i className='bx bx-user'></i></Link>
             </li>
             <li className={className}>
-                <Link href="#" className={classNameLink}>Mayorista</Link>
+                <Link href="/category/cervezas" className={classNameLink}>Cervezas</Link>
             </li>
             <li className={className}>
-                <Link href="#" className={classNameLink}>Cervezas</Link>
+                <Link href="/category/destilados" className={classNameLink}>Destilados</Link>
             </li>
             <li className={className}>
-                <Link href="#" className={classNameLink}>Destilados</Link>
+                <Link href="/category/vinos-y-espumantes" className={classNameLink}>Vino y Espumantes</Link>
             </li>
             <li className={className}>
-                <Link href="#" className={classNameLink}>Vino y Espumantes</Link>
+                <Link href="/category/bebidas" className={classNameLink}>Bebidas</Link>
             </li>
             <li className={className}>
-                <Link href="#" className={classNameLink}>Bebidas</Link>
-            </li>
-            <li className={className}>
-                <Link href="#" className={classNameLink}>Licores</Link>
+                <Link href="/category/licores" className={classNameLink}>Licores</Link>
             </li>
         </ul>
     );
