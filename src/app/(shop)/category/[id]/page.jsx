@@ -1,14 +1,10 @@
 'use client'
-import { useRouter } from 'next/router';
 import { useState } from 'react';
 import GridProducts from '@/sections/gridProducts';
 import GridProductsCol from '@/sections/gridProductsCol';
 import { FaList, FaGrip } from "react-icons/fa6";
-
-export default function CategoryView() {
-    const router = useRouter();
-    const { category } = router.query;
-    const [orderBy, setOrderBy] = useState(''); 
+export default function CategoryView({ params }) {
+    const [orderBy, setOrderBy] = useState('');
     const [gridView, setGridView] = useState(true);
 
     // Función para cambiar la opción de ordenado
@@ -36,7 +32,7 @@ export default function CategoryView() {
                     {/* Selector de vista */}
                     <div>
                         <button onClick={toggleGridView} className="mr-2">
-                            {gridView ? <FaList className=' w-6 h-6'/> : <FaGrip className=' w-6 h-6' />}
+                            {gridView ? <FaList className=' w-6 h-6' /> : <FaGrip className=' w-6 h-6' />}
                         </button>
                     </div>
 
@@ -53,9 +49,8 @@ export default function CategoryView() {
 
                 {/* Contenido principal (productos) */}
                 <div>
-                    <h2 className="text-3xl font-semibold text-center mb-10 text-white">
-                        {category ? `Nuestros Productos - ${category}` : 'Nuestros Productos'}
-                    </h2>
+                    <h2 className="text-3xl font-semibold text-center mb-10 text-white capitalize">{params.id.replace(/-/g, ' ')}</h2>
+
                     {gridView ? <GridProducts /> : <GridProductsCol />}
                 </div>
             </div>

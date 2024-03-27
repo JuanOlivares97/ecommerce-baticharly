@@ -5,7 +5,7 @@ import GridCategory from "@/sections/gridCategorys";
 export default function Home() {
   return (
     <div>
-      <div className="hidden md:block">
+      <div className="hidden md:block w-auto h-auto">
         <FullImage src="/img/BannerBotilleria.jpg" alt="Banner" />
       </div>
       <div className="flex justify-center">
