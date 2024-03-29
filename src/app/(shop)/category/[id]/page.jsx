@@ -20,18 +20,18 @@ export default function CategoryView({ params }) {
     return (
         <div className="flex text-white md:px-64 my-9">
             {/* Filtro */}
-            <div className="w-1/4">
+            <div className="hidden md:block w-1/4">
                 {/* Aquí puedes colocar tu componente de filtro */}
                 <h2>Filtro</h2>
             </div>
 
             {/* Grid */}
-            <div className="w-3/4">
+            <div className="md:w-3/4">
                 {/* Selector de vista (Grid o Lista) y Ordenado */}
                 <div className="flex justify-between mb-4">
                     {/* Selector de vista */}
                     <div>
-                        <button onClick={toggleGridView} className="mr-2">
+                        <button onClick={toggleGridView} className="m-2">
                             {gridView ? <FaList className=' w-6 h-6' /> : <FaGrip className=' w-6 h-6' />}
                         </button>
                     </div>

@@ -11,10 +11,10 @@ export const Menu = () => {
 
   return (
     <nav className="md:flex md:justify-around text-center">
-      <div className="block md:hidden">
+      <div className="flex justify-center md:hidden">
         <button
           onClick={toggleMenu}
-          className="flex items-center px-3 py-2 border rounded text-yellow-400 border-yellow-400 hover:text-white hover:border-white"
+          className="flex items-center px-3 py-2 my-2 border rounded text-yellow-400 border-yellow-400 hover:text-white hover:border-white"
         >
           <svg
             className="w-6 h-6"
@@ -39,10 +39,11 @@ export const Menu = () => {
               />
             )}
           </svg>
+          Categorias
         </button>
       </div>
       {isOpen ? (
-        <ul className="fixed bottom-0 left-0 right-0 bg-black text-white md:static md:flex md:justify-around text-center gap-6 md:gap-0">
+        <ul className="fixed bottom-1 left-0 right-0 bg-black text-white z-10 md:static md:flex md:justify-around text-center gap-6 md:gap-0">
           <MenuItem href="/category/ofertas">Ofertas</MenuItem>
           <MenuItem href="/category/cervezas">Cervezas</MenuItem>
           <MenuItem href="/category/destilados">Destilados</MenuItem>

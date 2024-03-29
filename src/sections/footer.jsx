@@ -1,53 +1,84 @@
 import Image from "next/image";
+import { FaFacebook, FaInstagram, FaTwitter, FaWhatsapp } from "react-icons/fa6";
+import Link from "next/link";
+
 export const Footer = () => {
-    return (
-        <footer className="bg-black text-yellow-500 py-6">
-            <div className="">
-                <div className="md:flex md:justify-between 2xl:px-64 py-4">
-                    <div className="flex flex-col items-center text center">
-                        <h1 className="font-bold text-lg mb-4">Contáctenos por nuestras redes sociales</h1>
-
-                        <Image src="/img/BotiCharly-logotipos.svg"
-                            width={128}
-                            height={128}
-                            alt="Logo de SuperCharly" />
-
-                        <div className="flex items-center mb-4">
-                            <a href="#" target="_blank" className="mr-2">
-
-                            </a>
-                            <a href="#" target="_blank" className="mr-2">
-
-                            </a>
-                            <a href="#" target="_blank">
-
-                            </a>
-                        </div>
-                        <p>WhatsApp: +56 9 3769 7413</p>
-                        <p>Correo: pedidos@boticharly.cl</p>
-                    </div>
-                    <div>
-                        <h1 className="font-bold text-lg mb-4">Botilleria Charly</h1>
-                        <ul>
-                            <li><a href="#" className="hover:text-white">Envío</a></li>
-                            <li><a href="#" className="hover:text-white">Sobre nosotros</a></li>
-                            <li><a href="#" className="hover:text-white">Contáctenos</a></li>
-                            <li><a href="#" className="hover:text-white">Mapa del sitio</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h1 className="font-bold text-lg mb-4">Súper Clientes</h1>
-                        <ul>
-                            <li><a href="#" className="hover:text-white">Iniciar sesión</a></li>
-                            <li><a href="#" className="hover:text-white">Mi cuenta</a></li>
-                        </ul>
-                    </div>
-                </div>
+  return (
+    <footer className="bg-black text-yellow-500">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-12">
+          <div className="text-center md:text-left">
+            <h2 className="text-2xl font-bold mb-4">Contáctenos</h2>
+            <Image
+              src="/img/BotiCharly-logotipos.svg"
+              width={128}
+              height={128}
+              alt="Logo de SuperCharly"
+              className="mx-auto md:mx-0"
+            />
+            <div className="flex justify-center md:justify-start mt-4">
+              <Link href="#" target="_blank" aria-label="Facebook" className="text-yellow-500 hover:text-white mr-4">
+                <FaFacebook size={24} />
+              </Link>
+              <Link href="#" target="_blank" aria-label="Instagram" className="text-yellow-500 hover:text-white mr-4">
+                <FaInstagram size={24} />
+              </Link>
             </div>
-            <div className="bg-black text-yellow-400 py-2">
-                <div className="mx-auto text-center">Copyright © Boti Charly. Todos los derechos Reservados.</div>
-            </div>
-        </footer>
-
-    );
+            <p className="mt-4">
+              <FaWhatsapp className="inline-block mr-2" />
+              +56 9 3769 7413
+            </p>
+            <p>
+              <a href="mailto:pedidos@boticharly.cl" className="hover:text-white">
+                pedidos@boticharly.cl
+              </a>
+            </p>
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold mb-4">Botilleria Charly</h2>
+            <ul className="space-y-2">
+              <li>
+                <Link href="#" className="hover:text-white">
+                  Envío
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  Sobre nosotros
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  Contáctenos
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  Mapa del sitio
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold mb-4">Súper Clientes</h2>
+            <ul className="space-y-2">
+              <li>
+                <Link href="#" className="hover:text-white">
+                  Iniciar sesión
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-white">
+                  Mi cuenta
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="bg-black text-yellow-400 py-4 text-center">
+          <p>Copyright © Boti Charly. Todos los derechos Reservados.</p>
+        </div>
+      </div>
+    </footer>
+  );
 };

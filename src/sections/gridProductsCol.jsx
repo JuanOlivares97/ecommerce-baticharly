@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import CardProductCol from '@/components/cardProductCol';
+import SkeletonGridProductCol from '@/components/skeletons/cardProductColSkeleton'
 
 const GridProductCol = () => {
   const [products, setProducts] = useState([]);
@@ -29,34 +30,14 @@ const GridProductCol = () => {
   return (
     <div className="container mx-auto px-4 py-6">
       {loading ? (
-        <div className="grid grid-cols-1 gap-6">
-          {Array.from({ length: productsPerPage }, (_, i) => (
-            <div key={i} className="bg-white text-white rounded-lg shadow-md overflow-hidden flex flex-row">
-              {/* Imagen del producto */}
-              <div className="animate-pulse bg-gray-200 rounded-lg h-48 w-48"></div>
-              
-              {/* Contenido de la tarjeta */}
-              <div className="p-2 flex flex-col justify-between flex-grow">
-                {/* Nombre del producto */}
-                <div className="animate-pulse bg-gray-200 h-4 w-32 rounded mb-2"></div>
-                
-                {/* Precio del producto */}
-                <div className="flex items-center justify-center">
-                  <div className="animate-pulse bg-gray-200 h-8 w-16 rounded"></div>
-                </div>
-                
-                {/* Botón de agregar al carrito (opcional) */}
-                <button className="animate-pulse px-3 py-1 bg-gray-200 text-white font-bold rounded hover:bg-gray-300 focus:outline-none self-center">Loading</button>
-              </div>
-            </div>
-          ))}
-        </div>
+        <SkeletonGridProductCol productsPerPage={productsPerPage}/>
       ) : (
         <>
           <div className="grid grid-cols-1 gap-6">
             {currentProducts.map(product => (
               <CardProductCol
                 key={product.id}
+                id={product.id}
                 NombreProducto={product.title}
                 PrecioProducto={product.price}
                 imgRef={product.image}

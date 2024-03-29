@@ -1,10 +1,10 @@
 import Image from "next/image";
-
-const CardProduct = ({imgRef,NombreProducto,PrecioProducto}) => {
+import Link from "next/link";
+const CardProduct = ({id,imgRef,NombreProducto,PrecioProducto}) => {
     return (
         <div className="bg-black text-white rounded-lg shadow-md overflow-hidden w-48 h-96 flex flex-col">
           {/* Imagen del producto */}
-          <Image src={imgRef} alt="Product" width={192} height={192} className="w-48 h-48 object-cover" />
+          <Link href={`/product/${id}`}><Image src={imgRef} alt="Product" width={192} height={192} className="w-48 h-48 object-cover" /></Link>
       
           {/* Contenido de la tarjeta */}
           <div className="p-2 flex flex-col justify-between flex-grow">

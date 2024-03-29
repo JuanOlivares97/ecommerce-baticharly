@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import CardProduct from '@/components/cardProduct';
+import SkeletonGridProduct from '@/components/skeletons/cardProductSkeleton'
 
 const GridProduct = () => {
   const [products, setProducts] = useState([]);
@@ -30,21 +31,14 @@ const GridProduct = () => {
     <div className="container py-6">
       
       {loading ? (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {Array.from({ length: productsPerPage }, (_, i) => (
-            <div key={i} className="animate-pulse">
-              <div className="rounded-lg bg-gray-200 h-64"></div>
-              <div className="mt-4 h-4 bg-gray-200 rounded"></div>
-              <div className="mt-2 h-4 bg-gray-200 rounded"></div>
-            </div>
-          ))}
-        </div>
+        <SkeletonGridProduct productsPerPage={productsPerPage}/>
       ) : (
         <>
           <div className="grid grid-cols-2 md:grid-cols-4  gap-6 justify-items-center">
             {currentProducts.map(product => (
               <CardProduct
                 key={product.id}
+                id={product.id}
                 NombreProducto={product.title}
                 PrecioProducto={product.price}
                 imgRef={product.image}
