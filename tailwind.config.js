@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import animations from '@midudev/tailwind-animations'
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,5 +11,5 @@ module.exports = {
     extend: {
     },
   },
-  plugins: [],
+  plugins: [animations],
 };

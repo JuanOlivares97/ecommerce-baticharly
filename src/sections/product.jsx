@@ -42,12 +42,12 @@ export default function Product({ id }) {
     <div className="max-w-6xl bg-black my-6 text-yellow-500">
       <div className="p-8 md:p-12 rounded-lg shadow-xl md:flex">
         {/* Contenedor de la imagen */}
-        <div className="md:w-2/3 h-auto">
+        <div className="md:w-2/3 h-auto flex justify-center items-center">
           {productData && (
             <img
               src={productData.image}
               alt={productData.title}
-              className="rounded-lg object-contain w-full h-auto"
+              className="rounded-lg object-contain w-2/3 h-auto"
             />
           )}
         </div>

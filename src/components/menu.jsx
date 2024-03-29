@@ -43,7 +43,7 @@ export const Menu = () => {
         </button>
       </div>
       {isOpen ? (
-        <ul className="fixed bottom-1 left-0 right-0 bg-black text-white z-10 md:static md:flex md:justify-around text-center gap-6 md:gap-0">
+        <ul className="fixed bottom-1 left-0 right-0 bg-black text-white z-10 md:static md:flex md:justify-around text-center gap-6 md:gap-0 animate-slide-in-bottom">
           <MenuItem href="/category/ofertas">Ofertas</MenuItem>
           <MenuItem href="/category/cervezas">Cervezas</MenuItem>
           <MenuItem href="/category/destilados">Destilados</MenuItem>
